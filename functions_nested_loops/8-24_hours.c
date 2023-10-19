@@ -22,7 +22,7 @@ void jack_bauer(void)
 		for (minute = 0; minute <= 59; minute++)
 		{
 			int minute_left = minute / 10;
-                	int minute_right = minute % 10;
+			int minute_right = minute % 10;
 
 			_putchar('0' + hour_left);
 			_putchar('0' + hour_right);
