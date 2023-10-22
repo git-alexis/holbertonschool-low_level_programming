@@ -7,6 +7,8 @@
  * Description: 'This function prints the line with underscore
  * and returns nothing'
  *
+ * @n: Integer variable
+ *
  * Return: Nothing
  */
 
