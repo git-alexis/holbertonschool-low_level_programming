@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * puts2 - Print a string
+ * puts2 - Print a string 2
  *
- * Description: 'This function print a string followed by a new line
- * and return nothing'
+ * Description: 'This function print a string every two letters
+ * followed by a new line and return nothing'
  *
  * @str: Address of character variable
  *
@@ -16,10 +16,12 @@ void puts2(char *str)
 {
 	int i;
 
-	for (i = 0; str[i] != '\\' && str[i] != '0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
-		i++;
+		if (i % 2 == 0)
+		{
+			_putchar(str[i]);
+		}
 	}
 	_putchar('\n');
 }
