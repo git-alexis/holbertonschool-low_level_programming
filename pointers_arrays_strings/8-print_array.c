@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * print_array - Half of string
+ * print_array - Print n element of array
  *
- * Description: 'This function print the last half of a string
- * and return nothing'
+ * Description: 'This function print the n first elements of array of
+ * integer followed by a new line and return nothing'
  *
- * @a: Pointer of integer variable a
+ * @a: Pointer of array of integer a
  * @n: Integer variable
  *
  * Return: Nothing
@@ -21,7 +21,7 @@ void print_array(int *a, int n)
 	{
 		length += 1;
 	}
-	if (length == 0)
+	if ((length == 0) || (n == 0))
 	{
 		printf("\n");
 	}
