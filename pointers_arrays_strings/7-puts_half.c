@@ -14,7 +14,7 @@
 
 void puts_half(char *str)
 {
-	int i, j, mid_length, length = 0;
+	int i, j, ind_mid_length, length = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -22,13 +22,13 @@ void puts_half(char *str)
 	}
 	if (length % 2 == 1)
 	{
-		mid_length = (length - 1) / 2;
+		ind_mid_length = ((length - 1) / 2) + 1;
 	}
 	else
 	{
-		mid_length = length / 2;
+		ind_mid_length = length / 2;
 	}
-	for (j = mid_length; j < length; j++)
+	for (j = ind_mid_length; j < length; j++)
 	{
 		_putchar(str[j]);
 	}
