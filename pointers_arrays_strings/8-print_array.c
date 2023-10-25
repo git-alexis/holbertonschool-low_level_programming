@@ -21,7 +21,7 @@ void print_array(int *a, int n)
 	{
 		length += 1;
 	}
-	if ((length == 0) || (n == 0))
+	if ((length == 0) || (n <= 0))
 	{
 		printf("\n");
 	}
