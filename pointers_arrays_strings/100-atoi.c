@@ -16,9 +16,8 @@ int _atoi(char *s)
 {
 	int length = 0;
 
-	for (; (s[length] < '0' || s[length] > '9') && s[length] != '\0';)
+	for (; (s[length] < '0' || s[length] > '9') && s[length] != '\0'; length++)
 	{
-		length++;
 	}
 	if (length == 0 || s[length] == '\0')
 	{
