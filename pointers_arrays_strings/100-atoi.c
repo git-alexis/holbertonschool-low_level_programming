@@ -29,5 +29,5 @@ int _atoi(char *s)
 	{
 		result = 10 * result + (s[index] - '0');
 	}
-	return(sign * result);
+	return (sign * result);
 }
