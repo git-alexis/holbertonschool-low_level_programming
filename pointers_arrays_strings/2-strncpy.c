@@ -2,16 +2,16 @@
 #include "main.h"
 
 /**
- * _strncpy - Concatenates two strings with n char
+ * _strncpy - Copy strings with n char
  *
- * Description: 'This function concatenes n char of the string in src to dest
- * and return a dest concatenated string'
+ * Description: 'This function copy n char of the string in src to dest
+ * and return a dest copy string'
  *
  * @dest: Pointer of character variable
  * @src: Pointer of character variable
  * @n: Integer variable
  *
- * Return: Add string (Dest)
+ * Return: Copy string (Dest)
  */
 
 char *_strncpy(char *dest, char *src, int n)
