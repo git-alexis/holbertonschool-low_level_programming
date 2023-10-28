@@ -14,18 +14,27 @@
 
 char *cap_string(char *s)
 {
-	int index;
+	int i;
 
-	for (index = 0; s[index] != '\0'; index++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[index] >= 'a' && s[index] <= 'z')
+		if (s[i] >= 'a' && s[i] <= 'z')
 		{
-			if (s[index - 1] < 'A' || s[index - 1] > 'Z')
+			if (s[i - 1] == ' ' ||
+			s[i - 1] == '\t' ||
+			s[i - 1] == '\n' ||
+			s[i - 1] == ',' ||
+			s[i - 1] == ';' ||
+			s[i - 1] == '.' ||
+			s[i - 1] == '!' ||
+			s[i - 1] == '?' ||
+			s[i - 1] == '"' ||
+			s[i - 1] == '(' ||
+			s[i - 1] == ')' ||
+			s[i - 1] == '{' ||
+			s[i - 1] == '}')
 			{
-				if (s[index - 1] < 'a' || s[index - 1] > 'z')
-				{
-					s[index] = s[index] - 32;
-				}
+				s[i] = s[i] - 32;
 			}
 		}
 	}
