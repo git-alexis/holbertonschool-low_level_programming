@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int count = 0;
 	int i, j;
 
-	for (i = 0; s[i] >= 'a' && s[i] <= 'z'; i++)
+	for (i = 0; (s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'); i++)
 	{
 		for (j = 0; accept[j] != '\0'; j++)
 		{
