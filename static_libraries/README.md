@@ -1,1 +1,1 @@
-not empty | projet static librarie
+not empty | project static libraries
