@@ -5,6 +5,9 @@
 
 /**
  * check_num - check - string there are digit
+ *
+ * Description: 'rty'
+ *
  * @str: array str
  *
  * Return: Always 0 (Success)
