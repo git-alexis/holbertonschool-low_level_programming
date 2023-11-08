@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -25,7 +24,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	double_array = malloc(height * sizeof(int));
+	double_array = malloc(height * sizeof(int *));
 	if (double_array == NULL)
 	{
 		return (NULL);
