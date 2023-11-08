@@ -24,6 +24,11 @@ char *create_array(unsigned int size, char c)
 	}
 
 	char_array = malloc(size * sizeof(char));
+	if (char_array == NULL)
+	{
+		return (NULL);
+	}
+
 	for (index = 0; index < size; index++)
 	{
 		char_array[index] = c;
