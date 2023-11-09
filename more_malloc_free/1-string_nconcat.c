@@ -41,7 +41,7 @@ unsigned int _strlen(char *array)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ncont_array;
-	int length_s1, index_s1;
+	int length_s1 = 0, index_s1;
 	unsigned int index_s2;
 
 	if (s1 != NULL)
