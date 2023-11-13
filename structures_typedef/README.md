@@ -1,4 +1,4 @@
 ce repertoire cobtient:
 - un readme
-- deux hearders
+- un hearder
 - quatre fichier C
