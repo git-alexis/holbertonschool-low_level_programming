@@ -2,13 +2,13 @@
 
 void free_list(list_t *head)
 {
-	list_t *current_node = head;
 	list_t *next_node;
 
-	while (current_node != NULL)
+	while (head != NULL)
 	{
-		next_node = current_node->next;
-		free(current_node);
-		current_node = next_node;
+		next_node = head->next;
+		free(head->str);
+		free(head);
+		head = next_node;
 	}
 }
