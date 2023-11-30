@@ -8,7 +8,10 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	while (temp_point != NULL)
 	{
 		if (position == index)
+		{
 			return (temp_point);
+		}
+
 		temp_point = temp_point->next;
 		position++;
 	}
