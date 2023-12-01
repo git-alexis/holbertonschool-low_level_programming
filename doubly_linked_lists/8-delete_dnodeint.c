@@ -6,7 +6,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *temp_point = *head;
 	dlistint_t *previous_node;
 
-	if (head == NULL)
+	if (*head == NULL || head == NULL)
 	{
 		return (-1);
 	}
