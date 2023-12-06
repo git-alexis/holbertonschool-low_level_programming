@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * @argc: Number of arguments
- * @argv: Liste of char pointer arguments
- * Return: Always 0
- */
+* main - entry point
+* @argc: arguments
+* @argv: arguments number
+* Return: Always 0
+*/
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int file_source, file_destination;
-	ssize_t caracs_read, caracs_write;
+	int source, destination, readFile, writeFile;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -19,50 +18,43 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	file_source = open(argv[1], O_RDONLY);
-
-	if (file_source == -1)
+	/* Ouvrir le fichier source */
+	source = open(argv[1], O_RDONLY);
+	if (source == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
-	file_destination = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
-	if (file_destination == -1)
+	/* Création du fichier de destination */
+	destination = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (destination == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
-	while ((caracs_read = read(file_source, buffer, sizeof(buffer))) != -1)
+	/* Copie depuis source dans destination */
+	while ((readFile = read(source, buffer, sizeof(buffer))) > 0)
 	{
-		caracs_write = write(file_destination, buffer, caracs_read);
-
-		if (caracs_write != caracs_read)
+		writeFile = write(destination, buffer, readFile);
+		if (writeFile != readFile)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
 
-	if (caracs_read == -1)
+	if (readFile == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
-	if (close(file_source) == -1)
+	if (close(source) == -1 || close(destination) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_source);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination);
 		exit(100);
 	}
-
-	if (close(file_destination) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_destination);
-		exit(100);
-	}
-
 	return (0);
 }
