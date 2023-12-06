@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((caracs_read = read(file_source, buffer, sizeof(buffer))) != -1)
+	while ((caracs_read = read(file_source, buffer, sizeof(buffer))) > 0)
 	{
 		caracs_write = write(file_destination, buffer, caracs_read);
 
