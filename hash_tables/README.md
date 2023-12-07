@@ -1,5 +1,5 @@
 contenue du fichier:
 
-- hearder: main.h
+- hearder: hash_tables.h
 - plusieurs fonctions
 - readme.md
